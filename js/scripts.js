@@ -3,11 +3,24 @@ $("document").ready(function(){
 
     event.preventDefault();
 
-    var gender = $("input:radio[name=gender]:checked").val();
-    var level = $("input:radio[name=level]:checked").val();
-    var color= $("input:radio[name=color]:checked").val();
-    var show-kind = $("input:radio[name=kind]:checked").val();
+    var name = $("input#name").val();
+    var intrested-in = $("input:radio[name=intrested-in]:checked").val();
+    var man-type = $("input:radio[name=man-type]:checked").val();
 
+    var woman-type = $("input:radio[name=woman-type]:checked").val();
+    var vacation-spot = $("input:radio[name=vacation-spot]:checked").val();
+    var intrests = $("input:radio[name=intrests]:checked").val();
+    var fav-color= $("input:radio[name=colors]:checked").val();
+    var show-kind = $("input:radio[name=show-kind]:checked").val();
+
+    var jenaniston-counter = 0;
+    var taylorswift-counter = 0;
+    var jenlawrence-counter = 0;
+    var jen-counter = 0;
+    var jimCarrey-counter = 0;
+    var clooney-counter = 0;
+    var chrisevans-counter = 0;
+    var jamesSpader-counter =0;
 
 
 
