@@ -12,7 +12,7 @@
       <h1>celebrity dating website</h1>
       <br></br>
 
-        <form>
+        <form id="dating">
 
           <label>We will collect some information about you to know what kind of celebrity you would match :)</label>
           <hr>
@@ -93,19 +93,19 @@
             <label>What is your favorate vacation spot?</label>
             <div class="radio">
               <label>
-                <input type="radio" name="vacation-spot" value="france" checked>
+                <input class="vacation-spot" type="radio" name="vacation-spot" value="france" checked>
                 France
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="vacation-spot" value="vegas">
+                <input class="vacation-spot" type="radio" name="vacation-spot" value="vegas">
                 Vegas
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="vacation-spot" value="hawai">
+                <input class="vacation-spot" type="radio" name="vacation-spot" value="hawai">
                 Hawai
               </label>
             </div>
@@ -116,19 +116,19 @@
             <label>What is your interests?</label>
             <div class="radio">
               <label>
-                <input type="radio" name="interests" value="fashion" checked>
+                <input class="intrests" type="radio" name="interests" value="fashion" checked>
                 Fashion
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="interests" value="traveling">
+                <input class="intrests" type="radio" name="interests" value="traveling">
                 Traveling
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="intrests" value="filming">
+                <input class="intrests" type="radio" name="intrests" value="filming">
                 Filming
               </label>
             </div>
@@ -139,19 +139,19 @@
             <label>What colors do you like the most?</label>
             <div class="radio">
               <label>
-                <input type="radio" name="colors" value="dark" checked>
+                <input class="favorate-color" type="radio" name="colors" value="dark" checked>
                   Dark colors
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="colors" value="springy">
+                <input class="favorate-color" type="radio" name="colors" value="springy">
                   Springy colors
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="colors" value="light">
+                <input class="favorate-color" type="radio" name="colors" value="light">
                   Light colors
               </label>
             </div>
@@ -194,9 +194,6 @@
 
         <button id="submit" class="btn btn-primary" type="submit">Match me with some celebrity :D</button>
         </form>
-
-
-
 
 
         <div id="result"></div>
