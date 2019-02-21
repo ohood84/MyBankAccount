@@ -45,7 +45,7 @@
             <label>Who is your favorite charactar? </label>
             <div class="radio">
               <label>
-                <input class="man-type" type="radio" name="man-type" value="ross" checked>
+                <input class="man-type" type="radio" name="man-type" value="ross">
                 a Ross
               </label>
             </div>
@@ -69,7 +69,7 @@
             <label>Who is your favorite charactar?</label>
             <div class="radio">
               <label>
-                <input type="radio" name="woman-type" value="rachel" checked>
+                <input type="radio" name="woman-type" value="rachel">
                 a Rachel
               </label>
             </div>
@@ -93,7 +93,7 @@
             <label>What is your favorate vacation spot?</label>
             <div class="radio">
               <label>
-                <input class="vacation-spot" type="radio" name="vacation-spot" value="france" checked>
+                <input class="vacation-spot" type="radio" name="vacation-spot" value="france">
                 France
               </label>
             </div>
@@ -116,7 +116,7 @@
             <label>What is your interests?</label>
             <div class="radio">
               <label>
-                <input class="intrests" type="radio" name="interests" value="fashion" checked>
+                <input class="intrests" type="radio" name="interests" value="fashion">
                 Fashion
               </label>
             </div>
@@ -139,7 +139,7 @@
             <label>What colors do you like the most?</label>
             <div class="radio">
               <label>
-                <input class="favorate-color" type="radio" name="colors" value="dark" checked>
+                <input class="favorate-color" type="radio" name="colors" value="dark">
                   Dark colors
               </label>
             </div>
@@ -193,10 +193,20 @@
         <br>
 
         <button id="submit" class="btn btn-primary" type="submit">Match me with some celebrity :D</button>
+        <br>
+        <hr>
+        <br>
         </form>
 
 
-        <div id="result"></div>
+        <div id="result">Hello <span id="user-name"></span>,<br>
+          Your best match is <span id="match"></span><br>
+          <span id="info0"></span>
+
+        </div>
+        <br>
+        <br>
+        <br>
 
 
 
