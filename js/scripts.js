@@ -5,26 +5,46 @@ $("document").ready(function(){
     var counters = [0,0,0,0,0,0,0,0];
 
 
+    $("#start").click(function(){
+      var name = $("input#name").val();
+
+      //alert(name);
+      if (name!==""){
+        $(".help-inline").empty();
+        $("#form1").show();
+        $("#result").hide();
+      }
+      else{
+        $(".help-inline").empty().text("Please make sure to enter your name.");
+        $("#result").hide();
+      }
+    });
+
 
     $(".intrested-in").click(function(){
       var intrestedIn = $("input:radio[name=intrested-in]:checked").val();
+      if (intrestedIn){
+        if(intrestedIn === "actor"){
+          $("#man-type").show();
+          $("#woman-type").hide();
+          counters[4]+=1000;
+          counters[5]+=1000;
+          counters[6]+=1000;
+          counters[7]+=1000;
+        }
+        else {
+          $("#woman-type").show();
+          $("#man-type").hide();
+          counters[0]+=1000;
+          counters[1]+=1000;
+          counters[2]+=1000;
+          counters[3]+=1000;
+        }
+      }
+      else{
+        $(".").show();
+      }
 
-      if(intrestedIn === "actor"){
-        $("#man-type").show();
-        $("#woman-type").hide();
-        counters[4]+=1000;
-        counters[5]+=1000;
-        counters[6]+=1000;
-        counters[7]+=1000;
-      }
-      else {
-        $("#woman-type").show();
-        $("#man-type").hide();
-        counters[0]+=1000;
-        counters[1]+=1000;
-        counters[2]+=1000;
-        counters[3]+=1000;
-      }
     });
 
     // adding the logic for the sec question-a <fav charactar-men>
@@ -175,14 +195,8 @@ $("document").ready(function(){
         var selectedImage = images[maxIndex];
         $("#info0").append(selectedImage);
 
+//i need to add the logic to not allow hte user of keeping some questions without an answer
 
-        // $("#info1").show();
-        // $("#info2").show();
-        // $("#info3").show();
-        // $("#info4").show();
-        // $("#info5").show();
-        // $("#info6").show();
-        // $("#info7").show();
 
 
       });
