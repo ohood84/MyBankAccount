@@ -4,11 +4,9 @@ $("document").ready(function(){
                 "Jim Carrey","George Clooney","Chris Evan","James Spader"];
     var counters = [0,0,0,0,0,0,0,0];
 
-
+    var counter=0; //counter to make sure all the questions have been answered from the user
     $("#start").click(function(){
       var name = $("input#name").val();
-
-      //alert(name);
       if (name!==""){
         $(".help-inline").empty();
         $("#form1").show();
@@ -23,26 +21,26 @@ $("document").ready(function(){
 
     $(".intrested-in").click(function(){
       var intrestedIn = $("input:radio[name=intrested-in]:checked").val();
-      if (intrestedIn){
-        if(intrestedIn === "actor"){
-          $("#man-type").show();
-          $("#woman-type").hide();
-          counters[4]+=1000;
-          counters[5]+=1000;
-          counters[6]+=1000;
-          counters[7]+=1000;
-        }
-        else {
-          $("#woman-type").show();
-          $("#man-type").hide();
-          counters[0]+=1000;
-          counters[1]+=1000;
-          counters[2]+=1000;
-          counters[3]+=1000;
-        }
+
+      if (intrestedIn!==""){
+        counter++;
       }
-      else{
-        $(".").show();
+      // alert(counter);
+      if(intrestedIn === "actor"){
+        $("#man-type").slideDown();
+        $("#woman-type").fadeOut();
+        counters[4]+=1000;
+        counters[5]+=1000;
+        counters[6]+=1000;
+        counters[7]+=1000;
+      }
+      else {
+        $("#woman-type").slideDown();
+        $("#man-type").fadeOut();
+        counters[0]+=1000;
+        counters[1]+=1000;
+        counters[2]+=1000;
+        counters[3]+=1000;
       }
 
     });
@@ -50,6 +48,12 @@ $("document").ready(function(){
     // adding the logic for the sec question-a <fav charactar-men>
     $(".man-type").click(function(){
       var manType = $("input:radio[name=man-type]:checked").val();
+
+      if (manType!==""){
+        counter++;
+      }
+      // alert(counter);
+
       if(manType === "ross"){
         counters[4]++;
         counters[7]++;
@@ -66,6 +70,11 @@ $("document").ready(function(){
     // adding the logic for the sec question a <fav charactar-women>
     $(".woman-type").click(function(){
       var womanType = $("input:radio[name=woman-type]:checked").val();
+      if (womanType!==""){
+        counter++;
+      }
+
+
       if(womanType === "rachel"){
         counters[0]++;
         counters[2]++;
@@ -82,6 +91,11 @@ $("document").ready(function(){
     // adding the logic for the the third question b<fav vacation spots>
     $(".vacation-spot").click(function(){
       var vacationSpot = $("input:radio[name=vacation-spot]:checked").val();
+      if (vacationSpot!==""){
+        counter++;
+      }
+
+
       if(vacationSpot === "france"){
         counters[0]++;
         counters[2]++;
@@ -99,8 +113,12 @@ $("document").ready(function(){
     });
 
     // adding the logic for the the forth question <intrests>
-    $(".interests").click(function(){
+    $(".intrests").click(function(){
       var intrests = $("input:radio[name=intrests]:checked").val();
+      if (intrests!==""){
+        counter++;
+      }
+
       if(intrests === "fashion"){
         counters[0]++;
         counters[2]++;
@@ -121,6 +139,11 @@ $("document").ready(function(){
     // adding the logic for the the fifth question <favorate-color>
     $(".favorate-color").click(function(){
       var colors = $("input:radio[name=colors]:checked").val();
+      if (colors!==""){
+        counter++;
+      }
+      // alert(counter);
+
       if(colors === "dark"){
         counters[0]++;
         counters[2]++;
@@ -139,8 +162,12 @@ $("document").ready(function(){
     });
       // adding the logic for the the sixith question <show-kind>
 
-    $(".favorate-color").click(function(){
+    $(".show-kind").click(function(){
       var shows = $("input:radio[name=show-kind]:checked").val();
+      if (shows!==""){
+        counter++;
+      }
+      // alert(counter);
       if(shows === "emotional"){
         counters[4]++;
         counters[0]++;
@@ -161,9 +188,18 @@ $("document").ready(function(){
 
 
       $("form#dating").submit(function(event){
-        //to determine which counter was the larger
+        //to make sure that the user answered all the 6 questions
+        if (counter <6){
+          $("#help-inline").empty().text("Please make sure to answer all the questions.");
+          $("#result").hide();
+        }
+        else{
+          $("#help-inline").empty();
+          $("#result").show();
+        }
         event.preventDefault();
-        $("#result").show();
+
+        //to determine which celebrity counter was the larger
 
         var max = 0;
         for (i=0; i<counters.length; i++){
@@ -193,7 +229,7 @@ $("document").ready(function(){
           "<img src='images/evans.jpg' width=400px>",
           "<img src='images/bb.jpg' width=400px>"]
         var selectedImage = images[maxIndex];
-        $("#info0").append(selectedImage);
+        $("#info0").after(selectedImage);
 
 //i need to add the logic to not allow hte user of keeping some questions without an answer
 

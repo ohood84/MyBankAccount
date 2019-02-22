@@ -75,19 +75,19 @@
               <label>Who is your favorite charactar?</label>
               <div class="radio">
                 <label>
-                  <input type="radio" name="woman-type" value="rachel">
+                  <input class="woman-type" type="radio" name="woman-type" value="rachel">
                   a Rachel
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="woman-type" value="monica">
+                  <input class="woman-type" type="radio" name="woman-type" value="monica">
                   a Monica
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="woman-type" value="phoebe">
+                  <input class="woman-type" type="radio" name="woman-type" value="phoebe">
                   orrr a Phoebe?
                 </label>
               </div>
@@ -168,28 +168,28 @@
               <label>what kind of shows do you like the most?</label>
               <div class="radio">
                 <label>
-                  <input type="radio" name="show-kind" value="emotional">
+                  <input class="show-kind" type="radio" name="show-kind" value="emotional">
                   Emotional
                 </label>
               </div>
 
               <div class="radio">
                 <label>
-                  <input type="radio" name="show-kind" value="action">
+                  <input class="show-kind" type="radio" name="show-kind" value="action">
                   Action
                 </label>
               </div>
 
               <div class="radio">
                 <label>
-                  <input type="radio" name="show-kind" value="drama">
+                  <input class="show-kind" type="radio" name="show-kind" value="drama">
                   Drama
                 </label>
               </div>
 
               <div class="radio">
                 <label>
-                  <input type="radio" name="show-kind" value="scary">
+                  <input class="show-kind" type="radio" name="show-kind" value="scary">
                   Scary
                 </label>
               </div>
@@ -197,8 +197,10 @@
 
 
           <br>
-
-          <button id="submit" class="btn btn-primary" type="submit">Match me with some celebrity :D</button>
+          <div class="control-group errors">
+            <button id="submit" class="btn btn-primary" type="submit">Match me with some celebrity :D</button>
+            <span id="help-inline"></span>
+          </div>
           <br>
           <hr>
           <br>
