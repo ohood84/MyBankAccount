@@ -198,7 +198,7 @@
 
           <br>
           <div class="control-group errors">
-            <button id="submit" class="btn btn-primary" type="submit">Match me with some celebrity :D</button>
+            <button id="submit" class="btn btn-primary" type="submit">Match me with some celebrity</button>
             <span id="help-inline"></span>
           </div>
           <br>
@@ -208,9 +208,25 @@
         </form>
 
 
-        <div id="result">Hello <span id="user-name"></span>,<br>
-          Your best match is <span id="match"></span><br><br>
-          <span id="info0"></span>
+        <div id="result">
+          <div class="row">
+            Hello <span id="user-name"></span>,<br>
+
+            <div id="col1" class="column col-m-6"> <!--to add the first match-->
+              Your best match is <span id="first-match"></span><br><br>
+              <span id="info0"></span>
+            </div>
+
+            <div id="col2" class="column col-m-6"><!--to add the first match-->
+              Your second match is <span id="sec-match"></span><br><br>
+              <span id="info1"></span>
+
+            </div>
+
+
+          </div>
+
+
 
         </div>
         <br>

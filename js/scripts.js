@@ -29,20 +29,29 @@ $("document").ready(function(){
       if(intrestedIn === "actor"){
         $("#man-type").slideDown();
         $("#woman-type").fadeOut();
-        counters[4]+=1000;
-        counters[5]+=1000;
-        counters[6]+=1000;
-        counters[7]+=1000;
+        counters[4] =1000;
+        counters[5] =1000;
+        counters[6] =1000;
+        counters[7] =1000;
+        counters[0]=0;
+        counters[1]=0;
+        counters[2]=0;
+        counters[3]=0;
       }
       else {
         $("#woman-type").slideDown();
         $("#man-type").fadeOut();
-        counters[0]+=1000;
-        counters[1]+=1000;
-        counters[2]+=1000;
-        counters[3]+=1000;
-      }
+        counters[0]=1000;
+        counters[1]=1000;
+        counters[2]=1000;
+        counters[3]=1000;
 
+        counters[4]=0;
+        counters[5]=0;
+        counters[6]=0;
+        counters[7]=0;
+      }
+      // alert(counters);
     });
 
     // adding the logic for the sec question-a <fav charactar-men>
@@ -201,26 +210,20 @@ $("document").ready(function(){
 
         //to determine which celebrity counter was the larger
 
-        var max = 0;
-        for (i=0; i<counters.length; i++){
-          if (counters[i] > max){
-            max = counters[i];
-          }
-        }
+        var max= Math.max(...counters);
+        // alert(max);
 
         //to do the mapping between the 2 arrays counters and names
         var maxIndex = counters.indexOf(max);
         var matchName = names[maxIndex];
 
-        var name = $("input#name").val();
+        //var name = $("input#name").val();
         $("#user-name").text(name);
-        $("#match").text(": "+matchName);
+        $("#first-match").text(": "+matchName);
 
         //mapping between the maxIndex and the array of photos
-
-
         $("#info0").show();
-        var images = ["<img src= 'images/ans.jpgc width=400px>",
+        var images = ["<img src= 'images/ans.jpg' width=400px>",
           "<img src='images/taylor.png' width=400px>",
           "<img src='images/lowr.jpg' width=400px>",
           "<img src='images/cam.jpg' width=400px>",
@@ -228,12 +231,23 @@ $("document").ready(function(){
           "<img src='images/clo.jpg' width=400px>",
           "<img src='images/evans.jpg' width=400px>",
           "<img src='images/bb.jpg' width=400px>"]
-        var selectedImage = images[maxIndex];
-        $("#info0").after(selectedImage);
+        var firstImg = images[maxIndex];
+        $("#info0").empty().after(firstImg);
+        // alert(counters);
+        // alert(max);
+      //To find the second match, need to find the second maximum counter
+      //i will set the max value to -1 and then i will find the max again
+      counters[maxIndex]=-1;
+      // alert(counters);
+      var secMax = Math.max(...counters);
+      // alert(secMax);
+      var secMaxIndex = counters.indexOf(secMax);
+      var secMatchName = names[secMaxIndex];
+      $("#sec-match").text(": "+ secMatchName);
 
-//i need to add the logic to not allow hte user of keeping some questions without an answer
-
-
+      $("#info1").show();
+      var secImg = images[secMaxIndex];
+      $("#info1").empty().after(secImg);
 
       });
 
