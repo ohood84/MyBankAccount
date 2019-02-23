@@ -9,8 +9,9 @@ $("document").ready(function(){
       var name = $("input#name").val();
       if (name!==""){
         $(".help-inline").empty();
-        $("#form1").show();
+        $("#intrested-in").show();
         $("#result").hide();
+        $(".name-block").hide();
       }
       else{
         $(".help-inline").empty().text("Please make sure to enter your name.");
@@ -25,10 +26,17 @@ $("document").ready(function(){
       if (intrestedIn!==""){
         counter++;
       }
+    });
       // alert(counter);
+    $("#next1").click(function(){
+
+      $("#intrested-in").hide();
+      var intrestedIn = $("input:radio[name=intrested-in]:checked").val();
+        // $("#intrests").slideDown();
       if(intrestedIn === "actor"){
         $("#man-type").slideDown();
         $("#woman-type").fadeOut();
+
         counters[4] =1000;
         counters[5] =1000;
         counters[6] =1000;
@@ -51,8 +59,8 @@ $("document").ready(function(){
         counters[6]=0;
         counters[7]=0;
       }
-      // alert(counters);
-    });
+        // alert(counters);
+      });
 
     // adding the logic for the sec question-a <fav charactar-men>
     $(".man-type").click(function(){
@@ -75,6 +83,10 @@ $("document").ready(function(){
         counters[6]++;
       }
     });
+    $("#next2").click(function(){
+      $("#man-type").hide();
+      $("#vacation-spot").slideDown();
+    });
 
     // adding the logic for the sec question a <fav charactar-women>
     $(".woman-type").click(function(){
@@ -94,6 +106,11 @@ $("document").ready(function(){
       else {
         counters[1]++;
       }
+    });
+
+    $("#next2-1").click(function(){
+      $("#woman-type").hide();
+      $("#vacation-spot").slideDown();
     });
 
 
@@ -121,6 +138,11 @@ $("document").ready(function(){
       }
     });
 
+    $("#next3").click(function(){
+      $("#vacation-spot").hide();
+      $("#intrests").slideDown();
+    });
+
     // adding the logic for the the forth question <intrests>
     $(".intrests").click(function(){
       var intrests = $("input:radio[name=intrests]:checked").val();
@@ -144,6 +166,12 @@ $("document").ready(function(){
         counters[6]++;
       }
     });
+
+    $("#next4").click(function(){
+      $("#intrests").hide();
+      $("#favorate-color").slideDown();
+    });
+
 
     // adding the logic for the the fifth question <favorate-color>
     $(".favorate-color").click(function(){
@@ -169,6 +197,14 @@ $("document").ready(function(){
         counters[6]++;
       }
     });
+
+    $("#next5").click(function(){
+      $("#favorate-color").hide();
+      $("#show-kind").slideDown();
+      $(".main-submit").show();
+    });
+
+
       // adding the logic for the the sixith question <show-kind>
 
     $(".show-kind").click(function(){
@@ -204,6 +240,7 @@ $("document").ready(function(){
         }
         else{
           $("#help-inline").empty();
+
           $("#result").show();
         }
         event.preventDefault();
@@ -217,20 +254,20 @@ $("document").ready(function(){
         var maxIndex = counters.indexOf(max);
         var matchName = names[maxIndex];
 
-        //var name = $("input#name").val();
+        var name = $("input#name").val();
         $("#user-name").text(name);
         $("#first-match").text(": "+matchName);
 
         //mapping between the maxIndex and the array of photos
         $("#info0").show();
-        var images = ["<img src= 'images/ans.jpg' width=400px>",
-          "<img src='images/taylor.png' width=400px>",
-          "<img src='images/lowr.jpg' width=400px>",
-          "<img src='images/cam.jpg' width=400px>",
-          "<img src='images/jim.jpg' width=400px>" ,
-          "<img src='images/clo.jpg' width=400px>",
-          "<img src='images/evans.jpg' width=400px>",
-          "<img src='images/bb.jpg' width=400px>"]
+        var images = ["<img src= 'images/ans.jpg' width=400px height=400px>",
+          "<img src='images/taylor.png' width=400px height=400px>",
+          "<img src='images/lowr.jpg' width=400px height=400px>",
+          "<img src='images/cam.jpg' width=400px height=400px>",
+          "<img src='images/jim.jpg' width=400px height=400px>" ,
+          "<img src='images/clo.jpg' width=400px height=400px>",
+          "<img src='images/evans.jpg' width=400px height=400px>",
+          "<img src='images/bb.jpg' width=400px height=400px>"]
         var firstImg = images[maxIndex];
         $("#info0").empty().after(firstImg);
         // alert(counters);

@@ -1,16 +1,23 @@
+/* .con{
+  border: 2px;
+  border-top: transparent;
+  border-bottom: transparent;
+} */
+
 #result{
   display:none;
 }
 #form1{
   display:none;
   }
-
 #man-type{
   display:none;
-}
 
+}
 #woman-type{
   display:none;
+
+
 }
 
 #info0{
@@ -19,21 +26,64 @@
 #info1{
   display:none;
 }
-#info2{
+label{
+  font-size: 18px;
+}
+.question{
+  padding-left: 4%;
+}
+.card{
+  float: left;
+  width; 100%;
+  padding: 15px;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+#intrested-in{
   display:none;
 }
-#info3{
+#man-type{
   display:none;
 }
-#info4{
+#woman-type{
   display:none;
 }
-#info5{
+#vacation-spot{
   display:none;
 }
-#info6{
+#intrests{
   display:none;
 }
-#info7{
+#favorate-color{
   display:none;
+}
+#show-kind{
+  display:none;
+}
+.main-submit{
+  display:none;
+}
+#help-inline{
+  padding-left:20px;
+  color:#e80659;
+}
+.help-inline{
+  padding-left:20px;
+  color:#e80659;
+}
+ .name-block{
+   margin-left:5%;
+ }
+#heading{
+  padding-left:5%;
+}
+
+.footer{
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
 }

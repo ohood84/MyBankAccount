@@ -5,234 +5,241 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/scripts.js"></script>
-    <title>celebrity dating website</title>
+    <title>celebrity Dating Match Game</title>
   </head>
   <body>
-    <div class="container">
-      <h1>celebrity dating website</h1>
-      <br></br>
+    <div class="container con">
+      <div class="jumbotron">
+        <h1>Celebrity Dating Match Game</h1>
+        <br></br>
+        <p id="heading">We will collect some information
+          about you to know what kind of celebrity you would match :)</p>
+      </div>
 
-        <form id="dating">
+      <form id="dating">
 
-          <label>We will collect some information about you to know what kind of celebrity you would match :)</label>
-          <hr>
-          <br>
-
-          <div class="control-group errors">
+        <br>
+        <div class="name-block">
+          <div class="control-group">
             <label>Ener your name</label>
             <div class="controls">
               <input type="text" id="name" class="form-group">
-              <span class="help-inline"></span>
+               <span class="help-inline"></span>
             </div>
+          </div>
 
             <br>
             <button class="btn" id="start" type="button">start</button>
+
+          </div> <!-- for the  name-block -->
+
+          <div class="question" id="intrested-in">
+            <label>Are you intrested in:</label>
+              <div class="radio">
+                <label>
+                <input class="intrested-in" type="radio" name="intrested-in" value="actor">
+                  Actor
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                <input  class="intrested-in" type="radio" name="intrested-in" value="actress">
+                 Actress
+                </label>
+              </div>
+              <br>
+            <button class="btn" id="next1" type="button">Next</button>
+          </div>
+
+
+
+          <div class="question" id="man-type">
+            <label>Who is your favorite charactar? </label>
+            <div class="radio">
+              <label>
+                <input class="man-type" type="radio" name="man-type" value="ross">
+                 Ross
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input class="man-type" type="radio" name="man-type" value="joey">
+                  Joey
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input class="man-type" type="radio" name="man-type" value="chandler">
+                 orrr Chandler?
+              </label>
+            </div>
+            <br>
+            <button class="btn" id="next2" type="button">Next</button>
+          </div>
+
+
+          <div class="question" id="woman-type">
+            <label>Who is your favorite charactar?</label>
+            <div class="radio">
+              <label>
+                <input class="woman-type" type="radio" name="woman-type" value="rachel">
+                  Rachel
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input class="woman-type" type="radio" name="woman-type" value="monica">
+                 Monica
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input class="woman-type" type="radio" name="woman-type" value="phoebe">
+                orrr Phoebe?
+              </label>
+            </div>
+            <br>
+            <button class="btn" id="next2-1" type="button">Next</button>
+          </div>
+
+          <div class="question" id="vacation-spot">
+            <label>What is your favorate vacation spot?</label>
+            <div class="radio">
+              <label>
+                <input class="vacation-spot" type="radio" name="vacation-spot" value="france">
+                France
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+              <input class="vacation-spot" type="radio" name="vacation-spot" value="vegas">
+                Vegas
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input class="vacation-spot" type="radio" name="vacation-spot" value="hawai">
+                 Hawai
+              </label>
+            </div>
+            <br>
+          <button class="btn" id="next3" type="button">Next</button>
+
+        </div>
+
+
+        <div class="question" id="intrests">
+          <label>What is your interests?</label>
+          <div class="radio">
+            <label>
+            <input class="intrests" type="radio" name="interests" value="fashion">
+              Fashion
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+            <input class="intrests" type="radio" name="interests" value="traveling">
+            Traveling
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input class="intrests" type="radio" name="intrests" value="filming">
+                Filming
+            </label>
           </div>
           <br>
-          <div id="form1">
-            <div id="intrested-in">
-              <label>Are you intrested in:</label>
-              <div class="radio">
-                <label>
-                  <input class="intrested-in" type="radio" name="intrested-in" value="actor">
-                  Actor <span class="help-inline"></span>
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input  class="intrested-in" type="radio" name="intrested-in" value="actress">
-                  Actress
-                </label>
-              </div>
+        <button class="btn" id="next4" type="button">Next</button>
+        </div>
+
+          <div class="question" id="favorate-color">
+            <label>What colors do you like the most?</label>
+            <div class="radio">
+              <label>
+                <input class="favorate-color" type="radio" name="colors" value="dark">
+                  Dark colors
+              </label>
             </div>
-
-            <div id="man-type">
-              <br>
-              <label>Who is your favorite charactar? </label>
-              <div class="radio">
-                <label>
-                  <input class="man-type" type="radio" name="man-type" value="ross">
-                  a Ross
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input class="man-type" type="radio" name="man-type" value="joey">
-                  a Joey
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input class="man-type" type="radio" name="man-type" value="chandler">
-                  orrr a Chandler?
-                </label>
-              </div>
+            <div class="radio">
+              <label>
+                <input class="favorate-color" type="radio" name="colors" value="springy">
+                  Springy colors
+              </label>
             </div>
-
-
-            <div id="woman-type">
-              <br>
-              <label>Who is your favorite charactar?</label>
-              <div class="radio">
-                <label>
-                  <input class="woman-type" type="radio" name="woman-type" value="rachel">
-                  a Rachel
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input class="woman-type" type="radio" name="woman-type" value="monica">
-                  a Monica
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input class="woman-type" type="radio" name="woman-type" value="phoebe">
-                  orrr a Phoebe?
-                </label>
-              </div>
+            <div class="radio">
+              <label>
+                <input class="favorate-color" type="radio" name="colors" value="light">
+                  Light colors
+              </label>
             </div>
-
-
             <br>
-            <div id="vacation-spot">
-              <label>What is your favorate vacation spot?</label>
-              <div class="radio">
-                <label>
-                  <input class="vacation-spot" type="radio" name="vacation-spot" value="france">
-                  France
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input class="vacation-spot" type="radio" name="vacation-spot" value="vegas">
-                  Vegas
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input class="vacation-spot" type="radio" name="vacation-spot" value="hawai">
-                  Hawai
-                </label>
-              </div>
-            </div>
+            <button class="btn" id="next5" type="button">Next</button>
+          </div>
 
-            <br>
-            <div id="intrests">
-              <label>What is your interests?</label>
-              <div class="radio">
-                <label>
-                  <input class="intrests" type="radio" name="interests" value="fashion">
-                  Fashion
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input class="intrests" type="radio" name="interests" value="traveling">
-                  Traveling
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input class="intrests" type="radio" name="intrests" value="filming">
-                  Filming
-                </label>
-              </div>
-            </div>
-
-            <br>
-            <div id="favorate-color">
-              <label>What colors do you like the most?</label>
-              <div class="radio">
-                <label>
-                  <input class="favorate-color" type="radio" name="colors" value="dark">
-                    Dark colors
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input class="favorate-color" type="radio" name="colors" value="springy">
-                    Springy colors
-                </label>
-              </div>
-              <div class="radio">
-                <label>
-                  <input class="favorate-color" type="radio" name="colors" value="light">
-                    Light colors
-                </label>
-              </div>
-            </div>
-
-            <br>
-            <div id="show-kind">
-              <label>what kind of shows do you like the most?</label>
-              <div class="radio">
-                <label>
-                  <input class="show-kind" type="radio" name="show-kind" value="emotional">
+          <div class="question" id="show-kind">
+            <label>what kind of shows do you like the most?</label>
+            <div class="radio">
+              <label>
+                <input class="show-kind" type="radio" name="show-kind" value="emotional">
                   Emotional
-                </label>
-              </div>
-
-              <div class="radio">
-                <label>
-                  <input class="show-kind" type="radio" name="show-kind" value="action">
-                  Action
-                </label>
-              </div>
-
-              <div class="radio">
-                <label>
-                  <input class="show-kind" type="radio" name="show-kind" value="drama">
-                  Drama
-                </label>
-              </div>
-
-              <div class="radio">
-                <label>
-                  <input class="show-kind" type="radio" name="show-kind" value="scary">
-                  Scary
-                </label>
-              </div>
+              </label>
             </div>
 
+            <div class="radio">
+              <label>
+                <input class="show-kind" type="radio" name="show-kind" value="action">
+                  Action
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input class="show-kind" type="radio" name="show-kind" value="drama">
+                  Drama
+              </label>
+            </div>
+
+            <div class="radio">
+              <label>
+                <input class="show-kind" type="radio" name="show-kind" value="scary">
+                  Scary
+              </label>
+            </div>
+          </div>
 
           <br>
-          <div class="control-group errors">
+          <div class="control-group main-submit">
             <button id="submit" class="btn btn-primary" type="submit">Match me with some celebrity</button>
             <span id="help-inline"></span>
           </div>
           <br>
-          <hr>
-          <br>
-      </div> <!--for #form1 -->
-        </form>
 
 
-        <div id="result">
+        <div class="question" id="result">
           <div class="row">
             Hello <span id="user-name"></span>,<br>
-
-            <div id="col1" class="column col-m-6"> <!--to add the first match-->
-              Your best match is <span id="first-match"></span><br><br>
-              <span id="info0"></span>
+            <div class="card">
+              <div id="col1" class="col-md-6"> <!--to add the first match-->
+                Your best match is <span id="first-match"></span><br><br>
+                <span id="info0"></span>
+              </div>
             </div>
 
-            <div id="col2" class="column col-m-6"><!--to add the first match-->
-              Your second match is <span id="sec-match"></span><br><br>
-              <span id="info1"></span>
-
+            <div class="card">
+              <div id="col2" class="col-md-6"><!--to add the second match-->
+                Your second match is <span id="sec-match"></span><br><br>
+                <span id="info1"></span>
+              </div>
             </div>
 
+          </div> <!--for the row -->
 
-          </div>
-
-
-
-        </div>
+        </div> <!--for the #result -->
         <br>
         <br>
         <br>
 
+        <div class="footer"></div>
 
 
     </div>
