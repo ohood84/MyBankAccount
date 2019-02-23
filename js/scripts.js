@@ -3,8 +3,8 @@ $("document").ready(function(){
     var names = ["Jennifer Aniston","Taylor Swift","Jennifer Lawrence","Cameron Diaz",
                 "Jim Carrey","George Clooney","Chris Evan","James Spader"];
     var counters = [0,0,0,0,0,0,0,0];
-
     var counter=0; //counter to make sure all the questions have been answered from the user
+
     $("#start").click(function(){
       var name = $("input#name").val();
       if (name!==""){
@@ -20,52 +20,45 @@ $("document").ready(function(){
     });
 
 
-    $(".intrested-in").click(function(){
-      var intrestedIn = $("input:radio[name=intrested-in]:checked").val();
-
-      if (intrestedIn!==""){
-        counter++;
-      }
-    });
-      // alert(counter);
     $("#next1").click(function(){
-
-      $("#intrested-in").hide();
       var intrestedIn = $("input:radio[name=intrested-in]:checked").val();
-        // $("#intrests").slideDown();
-      if(intrestedIn === "actor"){
-        $("#man-type").slideDown();
-        $("#woman-type").fadeOut();
-
-        counters[4] =1000;
-        counters[5] =1000;
-        counters[6] =1000;
-        counters[7] =1000;
-        counters[0]=0;
-        counters[1]=0;
-        counters[2]=0;
-        counters[3]=0;
+      if ((intrestedIn==="actor")|(intrestedIn==="actress")){ //first if
+        counter++;
+        // alert(counter);
+        $("#intrested-in").hide();
+        if(intrestedIn === "actor"){
+          $("#man-type").slideDown();
+          counters[4] =1000;
+          counters[5] =1000;
+          counters[6] =1000;
+          counters[7] =1000;
+          counters[0]=0;
+          counters[1]=0;
+          counters[2]=0;
+          counters[3]=0;
+        }
+        else {
+          $("#woman-type").slideDown();
+          counters[0]=1000;
+          counters[1]=1000;
+          counters[2]=1000;
+          counters[3]=1000;
+          counters[4]=0;
+          counters[5]=0;
+          counters[6]=0;
+          counters[7]=0;
+        }
+      } //for the first if
+      else{
+        // alert(intrestedIn);
+        $("#err-msg").text("Please pick an answer.")
+        $("#intrested-in").show();
       }
-      else {
-        $("#woman-type").slideDown();
-        $("#man-type").fadeOut();
-        counters[0]=1000;
-        counters[1]=1000;
-        counters[2]=1000;
-        counters[3]=1000;
-
-        counters[4]=0;
-        counters[5]=0;
-        counters[6]=0;
-        counters[7]=0;
-      }
-        // alert(counters);
       });
 
     // adding the logic for the sec question-a <fav charactar-men>
     $(".man-type").click(function(){
       var manType = $("input:radio[name=man-type]:checked").val();
-
       if (manType!==""){
         counter++;
       }
@@ -83,9 +76,17 @@ $("document").ready(function(){
         counters[6]++;
       }
     });
+
     $("#next2").click(function(){
       $("#man-type").hide();
       $("#vacation-spot").slideDown();
+    });
+    $("#back2").click(function(){
+      $("#man-type").fadeOut();
+      $("#intrested-in").slideDown();
+      $("#err-msg").empty();
+
+
     });
 
     // adding the logic for the sec question a <fav charactar-women>
@@ -94,7 +95,6 @@ $("document").ready(function(){
       if (womanType!==""){
         counter++;
       }
-
 
       if(womanType === "rachel"){
         counters[0]++;
@@ -112,7 +112,11 @@ $("document").ready(function(){
       $("#woman-type").hide();
       $("#vacation-spot").slideDown();
     });
-
+    $("#back2-1").click(function(){
+      $("#woman-type").fadeOut();
+      $("#intrested-in").slideDown();
+      $("#err-msg").empty();
+    });
 
     // adding the logic for the the third question b<fav vacation spots>
     $(".vacation-spot").click(function(){
@@ -141,6 +145,16 @@ $("document").ready(function(){
     $("#next3").click(function(){
       $("#vacation-spot").hide();
       $("#intrests").slideDown();
+    });
+    $("#back3").click(function(){
+      $("#vacation-spot").fadeOut();
+      var intrestedIn = $("input:radio[name=intrested-in]:checked").val();
+      if(intrestedIn==="actor"){
+        $("#man-type").slideDown();
+      }
+      else{
+        $("#woman-type").slideDown();
+      }
     });
 
     // adding the logic for the the forth question <intrests>
@@ -171,7 +185,10 @@ $("document").ready(function(){
       $("#intrests").hide();
       $("#favorate-color").slideDown();
     });
-
+    $("#back4").click(function(){
+      $("#intrests").fadeOut();
+      $("#vacation-spot").slideDown();
+    });
 
     // adding the logic for the the fifth question <favorate-color>
     $(".favorate-color").click(function(){
@@ -202,6 +219,12 @@ $("document").ready(function(){
       $("#favorate-color").hide();
       $("#show-kind").slideDown();
       $(".main-submit").show();
+      $("#help-inline").empty();
+    });
+    $("#back5").click(function(){
+      $("#favorate-color").fadeOut();
+      $("#vacation-spot").slideDown();
+      $(".main-submit").hide();
     });
 
 
@@ -231,6 +254,12 @@ $("document").ready(function(){
       }
       });
 
+      $("#back6").click(function(){
+        $("#show-kind").fadeOut();
+        $("#favorate-color").slideDown();
+        $(".main-submit").hide();
+        // $("#help-inline").hide();
+      });
 
       $("form#dating").submit(function(event){
         //to make sure that the user answered all the 6 questions

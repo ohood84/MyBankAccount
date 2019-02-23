@@ -44,46 +44,65 @@ label{
 }
 #intrested-in{
   display:none;
+  text-align: center;
 }
 #man-type{
   display:none;
+  text-align: center;
 }
 #woman-type{
   display:none;
+  text-align: center;
 }
 #vacation-spot{
   display:none;
+  text-align: center;
 }
 #intrests{
   display:none;
+  text-align: center;
 }
 #favorate-color{
   display:none;
+  text-align: center;
 }
 #show-kind{
   display:none;
+  text-align: center;
 }
 .main-submit{
   display:none;
+  text-align: center;
+
 }
 #help-inline{
   padding-left:20px;
   color:#e80659;
+  text-align: center;
 }
+#err-msg{
+  padding-left:20px;
+  color:#e80659;
+  text-align: center;
+}
+
 .help-inline{
   padding-left:20px;
+  text-align: center;
+
   color:#e80659;
 }
  .name-block{
-   margin-left:5%;
+   text-align: center;
+
  }
 #heading{
   padding-left:5%;
 }
-
-.footer{
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-  margin-top: 20px;
+.vl{
+  height:100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  top: 0;
 }
