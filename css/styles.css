@@ -24,6 +24,9 @@ hr{
 .jumbotron{
   background-color:#a94442 ;
     color:white;
+    margin-top: 20px;
+
+
   }
 .head-props{
   font-weight: bold;

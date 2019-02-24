@@ -24,7 +24,7 @@ $("document").ready(function(){
     $("#next1").click(function(){
       var intrestedIn = $("input:radio[name=intrested-in]:checked").val();
       if ((intrestedIn==="actor")|(intrestedIn==="actress")){ //first if
-        counter++;
+          counter++;
         // alert(counter);
         $("#intrested-in").hide();
         if(intrestedIn === "actor"){
@@ -62,19 +62,20 @@ $("document").ready(function(){
       var manType = $("input:radio[name=man-type]:checked").val();
       if (manType!==""){
         counter++;
-      }
+
       // alert(counter);
 
-      if(manType === "ross"){
-        counters[4]++;
-        counters[7]++;
-      }
+        if(manType === "ross"){
+          counters[4]++;
+          counters[7]++;
+        }
 
-      else if (manType === "joey") {
-      counters[5]++;
-      }
-      else {
-        counters[6]++;
+        else if (manType === "joey") {
+        counters[5]++;
+        }
+        else {
+          counters[6]++;
+        }
       }
     });
 
@@ -95,17 +96,17 @@ $("document").ready(function(){
       var womanType = $("input:radio[name=woman-type]:checked").val();
       if (womanType!==""){
         counter++;
-      }
 
-      if(womanType === "rachel"){
-        counters[0]++;
-        counters[2]++;
-      }
-      else if (womanType === "monica") {
-      counters[3]++;
-      }
-      else {
-        counters[1]++;
+        if(womanType === "rachel"){
+          counters[0]++;
+          counters[2]++;
+        }
+        else if (womanType === "monica") {
+        counters[3]++;
+        }
+        else {
+          counters[1]++;
+        }
       }
     });
 
@@ -124,22 +125,21 @@ $("document").ready(function(){
       var vacationSpot = $("input:radio[name=vacation-spot]:checked").val();
       if (vacationSpot!==""){
         counter++;
-      }
 
-
-      if(vacationSpot === "france"){
-        counters[0]++;
-        counters[2]++;
-        counters[4]++;
-        counters[7]++;
-      }
-      else if (vacationSpot === "vegas") {
-        counters[3]++;
-        counters[5]++;
-      }
-      else {
-        counters[1]++;
-        counters[6]++;
+        if(vacationSpot === "france"){
+          counters[0]++;
+          counters[2]++;
+          counters[4]++;
+          counters[7]++;
+        }
+        else if (vacationSpot === "vegas") {
+          counters[3]++;
+          counters[5]++;
+        }
+        else {
+          counters[1]++;
+          counters[6]++;
+        }
       }
     });
 
@@ -163,22 +163,22 @@ $("document").ready(function(){
       var intrests = $("input:radio[name=intrests]:checked").val();
       if (intrests!==""){
         counter++;
-      }
 
-      if(intrests === "fashion"){
-        counters[0]++;
-        counters[2]++;
-        counters[4]++;
-        counters[7]++;
-      }
+        if(intrests === "fashion"){
+          counters[0]++;
+          counters[2]++;
+          counters[4]++;
+          counters[7]++;
+        }
 
-      else if (intrests === "traveling") {
-        counters[3]++;
-        counters[5]++;
-      }
-      else {
-        counters[1]++;
-        counters[6]++;
+        else if (intrests === "traveling") {
+          counters[3]++;
+          counters[5]++;
+        }
+        else {
+          counters[1]++;
+          counters[6]++;
+        }
       }
     });
 
@@ -196,36 +196,36 @@ $("document").ready(function(){
       var colors = $("input:radio[name=colors]:checked").val();
       if (colors!==""){
         counter++;
-      }
-      // alert(counter);
+        // alert(counter);
 
-      if(colors === "dark"){
-        counters[0]++;
-        counters[2]++;
-        counters[4]++;
-        counters[7]++;
-      }
-      else if (colors === "springy") {
+        if(colors === "dark"){
+          counters[0]++;
+          counters[2]++;
+          counters[4]++;
+          counters[7]++;
+        }
+        else if (colors === "springy") {
 
-        counters[3]++;
-        counters[5]++;
-      }
-      else {
-        counters[1]++;
-        counters[6]++;
+          counters[3]++;
+          counters[5]++;
+        }
+        else {
+          counters[1]++;
+          counters[6]++;
+        }
       }
     });
 
     $("#next5").click(function(){
       $("#favorate-color").hide();
       $("#show-kind").slideDown();
-      $(".main-submit").show();
+      $("#submit").show();
       $("#help-inline").empty();
     });
     $("#back5").click(function(){
       $("#favorate-color").fadeOut();
       $("#vacation-spot").slideDown();
-      $(".main-submit").hide();
+      // $(".main-submit").hide();
     });
 
 
@@ -235,25 +235,26 @@ $("document").ready(function(){
       var shows = $("input:radio[name=show-kind]:checked").val();
       if (shows!==""){
         counter++;
+
+        // alert(counter);
+        if(shows === "emotional"){
+          counters[4]++;
+          counters[0]++;
+        }
+        else if (shows === "action") {
+          counters[2]++;
+          counters[7]++;
+        }
+        else if (shows === "drama") {
+          counters[3]++;
+          counters[5]++;
+        }
+        else{
+          counters[1]++;
+          counters[6]++;
+        }
       }
-      // alert(counter);
-      if(shows === "emotional"){
-        counters[4]++;
-        counters[0]++;
-      }
-      else if (shows === "action") {
-        counters[2]++;
-        counters[7]++;
-      }
-      else if (shows === "drama") {
-        counters[3]++;
-        counters[5]++;
-      }
-      else{
-        counters[1]++;
-        counters[6]++;
-      }
-      });
+    });
 
       $("#back6").click(function(){
         $("#show-kind").fadeOut();
@@ -267,24 +268,27 @@ $("document").ready(function(){
         $("#result").hide();
         $("#dating")[0].reset();
         $(".name-block").slideDown();
-
-
+        $("#err-msg").hide();
+        alert(counters);
+        counter=0;
+        alert(counter);
      });
+
+
       $("form#dating").submit(function(event){
         //to make sure that the user answered all the 6 questions
+        alert(counter);
         if (counter <6){
           $("#help-inline").empty().text("Please make sure to answer all the questions.");
           $("#result").hide();
         }
         else{
           $("#help-inline").empty();
-
           $("#result").show();
         }
         event.preventDefault();
 
         //to determine which celebrity counter was the larger
-
         var max= Math.max(...counters);
         // alert(max);
 
@@ -308,10 +312,9 @@ $("document").ready(function(){
           "<img src='images/bb.jpg' width=400px height=400px>"]
         var firstImg = images[maxIndex];
         $("#info0").empty().after(firstImg);
-        // alert(counters);
-        // alert(max);
+
       //To find the second match, need to find the second maximum counter
-      //i will set the max value to -1 and then i will find the max again
+      //i will set the max value in the array to -1 and then i will find the max again
       counters[maxIndex]=-1;
       // alert(counters);
       var secMax = Math.max(...counters);
