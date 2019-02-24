@@ -207,7 +207,6 @@ $("document").ready(function(){
           counters[7]++;
         }
         else if (colors === "springy") {
-
           counters[3]++;
           counters[5]++;
         }
@@ -260,6 +259,7 @@ $("document").ready(function(){
         $("#show-kind").fadeOut();
         $("#favorate-color").slideDown();
         $("#submit").hide();
+        $("#result").hide();
         // $("#help-inline").hide();
       });
       $("#restart").click(function(){
@@ -275,14 +275,17 @@ $("document").ready(function(){
 
       $("form#dating").submit(function(event){
         //to make sure that the user answered all the 6 questions
+          alert(counters);
         for (i=0; i<6; i++){
           if (checker[i] !== 1){
             $("#help-inline").empty().text("Please make sure to answer all the questions.");
             $("#result").hide();
           }
           else{
+
             $("#help-inline").empty();
             $("#result").show();
+
           }
         }
         event.preventDefault();
@@ -309,9 +312,7 @@ $("document").ready(function(){
           "images/evans.jpg",
           "images/bb.jpg"]
         var firstImg = images[maxIndex];
-      
-
-        $("#.info0").attr("src",firstImg);
+        $(".info0").attr("src",firstImg);
 
       //To find the second match, need to find the second maximum counter
       //i will set the max value in the array to -1 and then i will find the max again
@@ -325,8 +326,7 @@ $("document").ready(function(){
 
       $(".info1").show();
       var secImg = images[secMaxIndex];
-      $("#.info1").attr("src",secImg);
-
+      $(".info1").attr("src",secImg);
       });
 
 });

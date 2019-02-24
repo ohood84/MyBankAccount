@@ -137,16 +137,16 @@
 
 
         <div class="question" id="intrests">
-          <label>What is your interests?</label>
+          <label>What is your intrests?</label>
           <div class="radio">
             <label>
-            <input class="intrests" type="radio" name="interests" value="fashion">
+            <input class="intrests" type="radio" name="intrests" value="fashion">
               Fashion
             </label>
           </div>
           <div class="radio">
             <label>
-            <input class="intrests" type="radio" name="interests" value="traveling">
+            <input class="intrests" type="radio" name="intrests" value="traveling">
             Traveling
             </label>
           </div>
@@ -215,34 +215,33 @@
                   Scary
               </label>
             </div>
-            <button class="btn" id="back6" type="button">Back</button>
-            <button id="submit" class="btn btn-primary" type="submit">Match with a celebrity</button>
             <button class="btn" id="restart" type="button">Restart the game</button>
+            <button class="btn" id="back6" type="button">Back</button>
+            <button id="submit" class="btn" type="submit">Match with a celebrity</button>
+
             <div id="help-inline"></div>
           </div>
           <br>
 
 
         <div class="question" id="result">
+          <hr>
           <div class="row row-prop fontsizing">
-            <hr color:#0a2d68>
-          <strong>  Hello <span id="user-name"></span></strong>,<br>
-            <div class="card">
-              <div id="col1" class="col-lg-6"> <!--to add the first match-->
+            <strong>  Hello <span id="user-name"></span></strong>,<br>
+            <div id="col1" class="col-lg-6">
+              <div class="card"> <!--to add the first match-->
                 Your best match is <span id="first-match"></span>
                 <br><br>
                 <img class="info0" src="" width=400px height=400>
-                <!-- <span id="info0"></span> -->
-              </div>
+              </div> <!--for the card -->
             </div>
 
-            <div class="card">
-              <div id="col2" class="col-lg-6"><!--to add the second match-->
+            <div id="col2" class="col-lg-6">
+              <div class="card"><!--to add the second match-->
                 Your second match is <span id="sec-match"></span>
                 <br><br>
                 <img class="info1" src="" width=400px height=400>
-
-              </div>
+              </div><!--for the card -->
             </div>
 
           </div> <!--for the row -->
