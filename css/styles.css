@@ -1,9 +1,42 @@
-/* .con{
+.con{
   border: 2px;
   border-top: transparent;
   border-bottom: transparent;
-} */
+  background-color: #F9F3EF;
 
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  overflow:hidden;
+  /* z-index:-1; */
+}
+/* #name{
+  background-color: white (250, 00, 189) !important;
+} */
+hr{
+  height: 1px;
+  color:#a94442;
+  background-color: #a94442;
+  border: none;
+}
+.jumbotron{
+  background-color:#a94442 ;
+    color:white;
+  }
+.head-props{
+  font-weight: bold;
+  font-size: 80px;
+
+}
+html{
+    min-height:125%;/* make sure it is at least as tall as the viewport */
+    position:relative;
+}
+body{
+    height:125%; /* force the BODY element to match the height of the HTML element */
+}
 #result{
   display:none;
 }
@@ -29,19 +62,24 @@
 label{
   font-size: 18px;
 }
+.fontsizing{
+  font-size: 20px;
+}
 .question{
   padding-left: 4%;
 }
 .card{
   float: left;
   width; 100%;
-  padding: 15px;
+  padding: 30px;
   margin-top: 15px;
-  margin-left: 15px;
-  margin-right: 15px;
-  background-color: #f1f1f1;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  background-color:  #ead5c8;
   text-align: center;
 }
+
 #intrested-in{
   display:none;
   text-align: center;
@@ -94,15 +132,24 @@ label{
 }
  .name-block{
    text-align: center;
+ }
+ .row-prop{
+   align-content: center;
+ }
+ button{
+   background-color: #ead5c8;
 
  }
 #heading{
-  padding-left:5%;
+  padding-left:3%;
+  font-size: 20px;
+  font-weight: bold;
+  /* color:#0B4278; */
 }
-.vl{
+/* .vl{
   height:100%;
   position: absolute;
   left: 50%;
   margin-left: -3px;
   top: 0;
-}
+} */

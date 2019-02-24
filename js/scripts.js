@@ -12,6 +12,7 @@ $("document").ready(function(){
         $("#intrested-in").show();
         $("#result").hide();
         $(".name-block").hide();
+        // $("p#heading").hide();
       }
       else{
         $(".help-inline").empty().text("Please make sure to enter your name.");
@@ -257,10 +258,18 @@ $("document").ready(function(){
       $("#back6").click(function(){
         $("#show-kind").fadeOut();
         $("#favorate-color").slideDown();
-        $(".main-submit").hide();
+        $("#submit").hide();
         // $("#help-inline").hide();
       });
+      $("#restart").click(function(){
+        $("#show-kind").fadeOut();
+        $("#submit").fadeOut();
+        $("#result").hide();
+        $("#dating")[0].reset();
+        $(".name-block").slideDown();
 
+
+     });
       $("form#dating").submit(function(event){
         //to make sure that the user answered all the 6 questions
         if (counter <6){

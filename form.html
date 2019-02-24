@@ -10,11 +10,13 @@
   <body>
     <div class="container con">
       <div class="jumbotron">
-        <h1>Celebrity Dating Match Game</h1>
+        <h1 class="head-props">Celebrity Dating Match Game</h1>
         <br></br>
-        <p id="heading">We will collect some information
-          about you to know what kind of celebrity you would match :)</p>
+
       </div>
+      <!-- <p id="heading">We will collect some information
+        about you to know what kind of celebrity you would match :)
+        <br><br></p> --> 
 
       <form id="dating">
         <br>
@@ -214,26 +216,31 @@
               </label>
             </div>
             <button class="btn" id="back6" type="button">Back</button>
-            <button id="submit" class="btn btn-primary main-submit" type="submit">Match with a celebrity</button>
+            <button id="submit" class="btn btn-primary" type="submit">Match with a celebrity</button>
+            <button class="btn" id="restart" type="button">Restart the game</button>
             <div id="help-inline"></div>
           </div>
           <br>
 
 
         <div class="question" id="result">
-          <div class="row">
-            Hello <span id="user-name"></span>,<br>
+          <div class="row row-prop fontsizing">
+            <hr color:#0a2d68>
+          <strong>  Hello <span id="user-name"></span></strong>,<br>
             <div class="card">
-              <div id="col1" class="col-md-6"> <!--to add the first match-->
-                Your best match is <span id="first-match"></span><br><br>
+              <div id="col1" class="col-lg-6"> <!--to add the first match-->
+                Your best match is <span id="first-match"></span>
+                <br><br>
                 <span id="info0"></span>
               </div>
             </div>
 
             <div class="card">
-              <div id="col2" class="col-md-6"><!--to add the second match-->
-                Your second match is <span id="sec-match"></span><br><br>
+              <div id="col2" class="col-lg-6"><!--to add the second match-->
+                Your second match is <span id="sec-match"></span>
+                <br><br>
                 <span id="info1"></span>
+
               </div>
             </div>
 
