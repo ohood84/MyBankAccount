@@ -3,7 +3,11 @@ $("document").ready(function(){
     var names = ["Jennifer Aniston","Taylor Swift","Jennifer Lawrence","Cameron Diaz",
                 "Jim Carrey","George Clooney","Chris Evan","James Spader"];
     var counters = [0,0,0,0,0,0,0,0];
-    var counter=0; //counter to make sure all the questions have been answered from the user
+
+    var checker = [0,0,0,0,0,0]; // to make sure all the questions have been answered from the user
+                                //if answered turn the value to 1
+
+
 
     $("#start").click(function(){
       var name = $("input#name").val();
@@ -24,7 +28,7 @@ $("document").ready(function(){
     $("#next1").click(function(){
       var intrestedIn = $("input:radio[name=intrested-in]:checked").val();
       if ((intrestedIn==="actor")|(intrestedIn==="actress")){ //first if
-          counter++;
+          checker[0]=1;
         // alert(counter);
         $("#intrested-in").hide();
         if(intrestedIn === "actor"){
@@ -61,9 +65,7 @@ $("document").ready(function(){
     $(".man-type").click(function(){
       var manType = $("input:radio[name=man-type]:checked").val();
       if (manType!==""){
-        counter++;
-
-      // alert(counter);
+        checker[1]=1;
 
         if(manType === "ross"){
           counters[4]++;
@@ -95,7 +97,7 @@ $("document").ready(function(){
     $(".woman-type").click(function(){
       var womanType = $("input:radio[name=woman-type]:checked").val();
       if (womanType!==""){
-        counter++;
+        checker[1]=1;
 
         if(womanType === "rachel"){
           counters[0]++;
@@ -124,7 +126,7 @@ $("document").ready(function(){
     $(".vacation-spot").click(function(){
       var vacationSpot = $("input:radio[name=vacation-spot]:checked").val();
       if (vacationSpot!==""){
-        counter++;
+        checker[2]=1;
 
         if(vacationSpot === "france"){
           counters[0]++;
@@ -162,7 +164,7 @@ $("document").ready(function(){
     $(".intrests").click(function(){
       var intrests = $("input:radio[name=intrests]:checked").val();
       if (intrests!==""){
-        counter++;
+        checker[3]=1;
 
         if(intrests === "fashion"){
           counters[0]++;
@@ -195,8 +197,8 @@ $("document").ready(function(){
     $(".favorate-color").click(function(){
       var colors = $("input:radio[name=colors]:checked").val();
       if (colors!==""){
-        counter++;
-        // alert(counter);
+        checker[4]=1;
+
 
         if(colors === "dark"){
           counters[0]++;
@@ -227,14 +229,12 @@ $("document").ready(function(){
       $("#vacation-spot").slideDown();
       // $(".main-submit").hide();
     });
-
-
       // adding the logic for the the sixith question <show-kind>
 
     $(".show-kind").click(function(){
       var shows = $("input:radio[name=show-kind]:checked").val();
       if (shows!==""){
-        counter++;
+        checker[5]=1;
 
         // alert(counter);
         if(shows === "emotional"){
@@ -269,28 +269,26 @@ $("document").ready(function(){
         $("#dating")[0].reset();
         $(".name-block").slideDown();
         $("#err-msg").hide();
-        alert(counters);
-        counter=0;
-        alert(counter);
+        checker=[0,0,0,0,0,0];
      });
 
 
       $("form#dating").submit(function(event){
         //to make sure that the user answered all the 6 questions
-        alert(counter);
-        if (counter <6){
-          $("#help-inline").empty().text("Please make sure to answer all the questions.");
-          $("#result").hide();
-        }
-        else{
-          $("#help-inline").empty();
-          $("#result").show();
+        for (i=0; i<6; i++){
+          if (checker[i] !== 1){
+            $("#help-inline").empty().text("Please make sure to answer all the questions.");
+            $("#result").hide();
+          }
+          else{
+            $("#help-inline").empty();
+            $("#result").show();
+          }
         }
         event.preventDefault();
 
         //to determine which celebrity counter was the larger
         var max= Math.max(...counters);
-        // alert(max);
 
         //to do the mapping between the 2 arrays counters and names
         var maxIndex = counters.indexOf(max);
@@ -301,17 +299,17 @@ $("document").ready(function(){
         $("#first-match").text(": "+matchName);
 
         //mapping between the maxIndex and the array of photos
-        $("#info0").show();
-        var images = ["<img src= 'images/ans.jpg' width=400px height=400px>",
-          "<img src='images/taylor.png' width=400px height=400px>",
-          "<img src='images/lowr.jpg' width=400px height=400px>",
-          "<img src='images/cam.jpg' width=400px height=400px>",
-          "<img src='images/jim.jpg' width=400px height=400px>" ,
-          "<img src='images/clo.jpg' width=400px height=400px>",
-          "<img src='images/evans.jpg' width=400px height=400px>",
-          "<img src='images/bb.jpg' width=400px height=400px>"]
+        $(".info0").show();
+        var images = ["images/ans.jpg",
+          "images/taylor.png",
+          "images/lowr.jpg",
+          "images/cam.jpg",
+          "images/jim.jpg" ,
+          "images/clo.jpg",
+          "images/evans.jpg",
+          "images/bb.jpg"]
         var firstImg = images[maxIndex];
-        $("#info0").empty().after(firstImg);
+        $(".info0").src= firstImg;
 
       //To find the second match, need to find the second maximum counter
       //i will set the max value in the array to -1 and then i will find the max again
@@ -323,10 +321,9 @@ $("document").ready(function(){
       var secMatchName = names[secMaxIndex];
       $("#sec-match").text(": "+ secMatchName);
 
-      $("#info1").show();
+      $(".info1").show();
       var secImg = images[secMaxIndex];
-      $("#info1").empty().after(secImg);
-
+      $(".info1").src= secImg;
       });
 
 });
