@@ -24,10 +24,9 @@
           <div class="control-group">
             <label>Ener your name</label>
               <input type="text" id="name" class="form-group">
-              <div class="help-inline"></div>
           </div>
-
-            <br>
+          <div class="help-inline"></div>
+          <br>
 
             <button class="btn" id="start" type="button">start</button>
 
@@ -50,10 +49,12 @@
                  Actress
                 </label>
               </div>
+              <div id="err-msg"></div>
               <br>
+
               <!-- <button class="btn" id="back1" type="button">Back</button> -->
               <button class="btn" id="next1" type="button">Next</button>
-              <div id="err-msg"></div>
+
           </div>
 
 
@@ -181,13 +182,13 @@
                   Light colors
               </label>
             </div>
-            <br>
+              <br>
             <button class="btn" id="back5" type="button">Back</button>
             <button class="btn" id="next5" type="button">Next</button>
           </div>
 
           <div class="question" id="show-kind">
-            <label>what kind of shows do you like the most?</label>
+            <label>What kind of shows do you like the most?</label>
             <div class="radio">
               <label>
                 <input class="show-kind" type="radio" name="show-kind" value="emotional">
@@ -215,11 +216,12 @@
                   Scary
               </label>
             </div>
+            <br>
+            <div id="help-inline"></div>
             <button class="btn" id="restart" type="button">Restart the game</button>
             <button class="btn" id="back6" type="button">Back</button>
             <button id="submit" class="btn" type="submit">Match with a celebrity</button>
 
-            <div id="help-inline"></div>
           </div>
           <br>
 
@@ -227,10 +229,10 @@
         <div class="question" id="result">
           <hr>
           <div class="row row-prop fontsizing">
-            <strong>  Hello <span id="user-name"></span></strong>,<br>
+              Hello <strong><span id="user-name"></span></strong>,<br>
             <div id="col1" class="col-lg-6">
               <div class="card"> <!--to add the first match-->
-                Your best match is <span id="first-match"></span>
+                Your best match is: <strong><span id="first-match"></span></strong>
                 <br><br>
                 <img class="info0" src="" width=400px height=400>
               </div> <!--for the card -->
@@ -238,7 +240,7 @@
 
             <div id="col2" class="col-lg-6">
               <div class="card"><!--to add the second match-->
-                Your second match is <span id="sec-match"></span>
+                Your second match is: <strong><span id="sec-match"></span></strong>
                 <br><br>
                 <img class="info1" src="" width=400px height=400>
               </div><!--for the card -->
@@ -249,10 +251,6 @@
         </div> <!--for the #result -->
         <br>
         <br>
-        <br>
-
-
-
 
     </div>
   </body>

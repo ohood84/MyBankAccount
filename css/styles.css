@@ -151,3 +151,9 @@ label{
   font-weight: bold;
   /* color:#0B4278; */
 }
+
+@media screen and (max-width: 480px) {
+  body {
+    background-color: black;
+    color:#7a022e;
+  }

@@ -275,17 +275,14 @@ $("document").ready(function(){
 
       $("form#dating").submit(function(event){
         //to make sure that the user answered all the 6 questions
-          alert(counters);
         for (i=0; i<6; i++){
           if (checker[i] !== 1){
             $("#help-inline").empty().text("Please make sure to answer all the questions.");
             $("#result").hide();
           }
           else{
-
             $("#help-inline").empty();
             $("#result").show();
-
           }
         }
         event.preventDefault();
@@ -299,7 +296,7 @@ $("document").ready(function(){
 
         var name = $("input#name").val();
         $("#user-name").text(name);
-        $("#first-match").text(": "+matchName);
+        $("#first-match").text(" "+matchName);
 
         //mapping between the maxIndex and the array of photos
         $(".info0").show();
@@ -322,7 +319,7 @@ $("document").ready(function(){
       // alert(secMax);
       var secMaxIndex = counters.indexOf(secMax);
       var secMatchName = names[secMaxIndex];
-      $("#sec-match").text(": "+ secMatchName);
+      $("#sec-match").text(" "+ secMatchName);
 
       $(".info1").show();
       var secImg = images[secMaxIndex];
