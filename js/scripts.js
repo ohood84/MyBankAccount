@@ -309,7 +309,9 @@ $("document").ready(function(){
           "images/evans.jpg",
           "images/bb.jpg"]
         var firstImg = images[maxIndex];
-        $(".info0").src= firstImg;
+      
+
+        $("#.info0").attr("src",firstImg);
 
       //To find the second match, need to find the second maximum counter
       //i will set the max value in the array to -1 and then i will find the max again
@@ -323,7 +325,8 @@ $("document").ready(function(){
 
       $(".info1").show();
       var secImg = images[secMaxIndex];
-      $(".info1").src= secImg;
+      $("#.info1").attr("src",secImg);
+
       });
 
 });

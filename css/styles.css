@@ -56,10 +56,10 @@ body{
 
 }
 
-#info0{
+.info0{
   display:none;
 }
-#info1{
+.info1{
   display:none;
 }
 label{
