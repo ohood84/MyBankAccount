@@ -124,6 +124,7 @@ label{
   text-align: center;
 }
 #err-msg{
+  display: none;
   padding-left:20px;
   color:#e80659;
   text-align: center;

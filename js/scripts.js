@@ -16,7 +16,7 @@ $("document").ready(function(){
         $("#intrested-in").show();
         $("#result").hide();
         $(".name-block").hide();
-        // $("p#heading").hide();
+        // $("#err-msg").hide();
       }
       else{
         $(".help-inline").empty().text("Please make sure to enter your name.");
@@ -32,6 +32,7 @@ $("document").ready(function(){
         // alert(counter);
         $("#intrested-in").hide();
         if(intrestedIn === "actor"){
+          // $("#err-msg").hide();
           $("#man-type").slideDown();
           counters[4] =1000;
           counters[5] =1000;
@@ -56,6 +57,7 @@ $("document").ready(function(){
       } //for the first if
       else{
         // alert(intrestedIn);
+        $("#err-msg").show();
         $("#err-msg").text("Please pick an answer.")
         $("#intrested-in").show();
       }
@@ -266,9 +268,10 @@ $("document").ready(function(){
         $("#show-kind").fadeOut();
         $("#submit").fadeOut();
         $("#result").hide();
-        $("#dating")[0].reset();
         $(".name-block").slideDown();
-        $("#err-msg").hide();
+        $("#dating")[0].reset();
+
+        // $("#err-msg").hide();
         checker=[0,0,0,0,0,0];
      });
 
