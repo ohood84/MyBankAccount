@@ -32,7 +32,7 @@ $("document").ready(function(){
         // alert(counter);
         $("#intrested-in").hide();
         if(intrestedIn === "actor"){
-          // $("#err-msg").hide();
+          $("#err-msg").hide();
           $("#man-type").slideDown();
           counters[4] =1000;
           counters[5] =1000;
@@ -56,7 +56,6 @@ $("document").ready(function(){
         }
       } //for the first if
       else{
-        // alert(intrestedIn);
         $("#err-msg").show();
         $("#err-msg").text("Please pick an answer.")
         $("#intrested-in").show();
@@ -270,8 +269,7 @@ $("document").ready(function(){
         $("#result").hide();
         $(".name-block").slideDown();
         $("#dating")[0].reset();
-
-        // $("#err-msg").hide();
+        $("#err-msg").hide();
         checker=[0,0,0,0,0,0];
      });
 
