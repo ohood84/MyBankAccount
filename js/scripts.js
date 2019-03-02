@@ -7,8 +7,6 @@ $("document").ready(function(){
     var checker = [0,0,0,0,0,0]; // to make sure all the questions have been answered from the user
                                 //if answered turn the value to 1
 
-
-
     $("#start").click(function(){
       var name = $("input#name").val();
       if (name!==""){
@@ -226,7 +224,7 @@ $("document").ready(function(){
     });
     $("#back5").click(function(){
       $("#favorate-color").fadeOut();
-      $("#vacation-spot").slideDown();
+      $("#intrests").slideDown();
       // $(".main-submit").hide();
     });
       // adding the logic for the the sixith question <show-kind>
@@ -276,10 +274,13 @@ $("document").ready(function(){
 
       $("form#dating").submit(function(event){
         //to make sure that the user answered all the 6 questions
+        // var bad =0;
+
         for (i=0; i<6; i++){
           if (checker[i] !== 1){
             $("#help-inline").empty().text("Please make sure to answer all the questions.");
             $("#result").hide();
+            break;
           }
           else{
             $("#help-inline").empty();
