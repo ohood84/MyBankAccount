@@ -5,70 +5,67 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Address book</title>
+    <title>Bank Accounts</title>
   </head>
   <body>
     <div class="container">
-      <h1>Address book</h1>
+
 
       <div class="row">
+        <h2>Welcome to our cridit union</h2>
+      </
 
-        <div class="col-md-6">
-          <h2>Add a contact:</h2>
+        <form id="bank">
+          <div class="col-md-6">
+            <h2>Register a new account:</h2>
 
 
 
-          <form id="new-contact">
             <div class="form-group">
-              <label for="new-first-name">First name</label>
-              <input type="text" class="form-control" id="new-first-name">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name">
             </div>
+
+
+
             <div class="form-group">
-              <label for="new-last-name">Last name</label>
-              <input type="text" class="form-control" id="new-last-name">
+              <label for="deposit">Initial Deposit</label>
+              <input type="text" class="form-control" id="initial">
             </div>
 
-            <div id="new-addresses">
-              <div class="new-address">
-                <div class="form-group">
-                  <label for="new-street">Street</label>
-                  <input type="text" class="form-control new-street">
-                </div>
-                <div class="form-group">
-                  <label for="new-city">City</label>
-                  <input type="text" class="form-control new-city">
-                </div>
-                <div class="form-group">
-                  <label for="new-state">State</label>
-                  <input type="text" class="form-control new-state">
-                </div>
-              </div>
+          </div>   <!-- for the first column -->
+
+
+          <div class="col-md-6">
+              <h2>Deposit or withdraw funds:</h2>
+            <div class="form-group">
+              <label for="name">Deposit Amount</label>
+              <input type="text" class="form-control" id="deposit">
             </div>
 
-            <span class="btn btn-primary" id="add-address">Another address</span>
 
-            <button type="submit" class="btn">Add</button>
-          </form>
 
-          <h2>Contacts:</h2>
-          <ul id="contacts">
+            <div class="form-group">
+              <label for="deposit">Withdrawal Amount</label>
+              <input type="text" class="form-control" id="withdrawal">
+            </div>
 
-          </ul>
-        </div>
+          </div>  <!-- for the sec column -->
+          <button type="submit" class="btn btn-primary">Balance</button>
+        </form>
+      </div> <!-- for teh row -->
 
-        <div class="col-md-6">
-          <div id="show-contact">
-            <h2></h2>
-            <p>First name: <span class="first-name"></span></p>
-            <p>Last name: <span class="last-name"></span></p>
-            <p>Addresses:</p>
-            <ul id="addresses">
+<br>
+<br>
 
-            </ul>
-          </div>
-        </div>
+      <div id="result">
+        <!-- <label for="current">Current Balance</label>
+
+        <input type="text" id="balance"> -->
 
       </div>
+
+
     </div>
   </body>
 </html>
