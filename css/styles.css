@@ -1,0 +1,16 @@
+#name,#deposit,#withdrawal,#initial{
+  float:right;
+}
+
+label{
+  /* float:left; */
+}
+.col-md-5 ,.row{
+  border:1px solid blue;
+  /* border-color: black; */
+  background-color: lightblue;
+  color:blue;
+}
+#balance{
+text-align: center;
+}

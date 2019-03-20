@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE>
 <html>
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
@@ -11,58 +11,58 @@
     <div class="container">
 
 
-      <div class="row">
-        <h2>Welcome to our cridit union</h2>
-      </
+      <!-- <div class="row"> -->
+        <h1>Welcome to our Cridit Union</h1>
+
 
         <form id="bank">
-          <div class="col-md-6">
+          <div class="col-md-5">
             <h2>Register a new account:</h2>
 
 
 
             <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" class="form-control" id="name">
+            <label>Name</label>
+              <input type="text"  id="name">
             </div>
 
 
 
             <div class="form-group">
               <label for="deposit">Initial Deposit</label>
-              <input type="text" class="form-control" id="initial">
+              <input type="text"  id="initial">
             </div>
 
           </div>   <!-- for the first column -->
 
 
-          <div class="col-md-6">
+          <div class="col-md-5" style="float:right">
               <h2>Deposit or withdraw funds:</h2>
             <div class="form-group">
               <label for="name">Deposit Amount</label>
-              <input type="text" class="form-control" id="deposit">
+              <input type="text"  id="deposit">
             </div>
 
 
 
             <div class="form-group">
               <label for="deposit">Withdrawal Amount</label>
-              <input type="text" class="form-control" id="withdrawal">
+              <input type="text"  id="withdrawal">
             </div>
 
           </div>  <!-- for the sec column -->
-          <button type="submit" class="btn btn-primary">Balance</button>
+
+
+          <!-- <button type="submit" class="btn btn-primary">Balance</button> -->
         </form>
       </div> <!-- for teh row -->
 
 <br>
 <br>
 
-      <div id="result">
-        <!-- <label for="current">Current Balance</label>
-
-        <input type="text" id="balance"> -->
-
+      <div id="result" class="container text-center" style="background:lightblue">
+        <label>Current Balance:</label><br>
+        <span class="text-center"><input type="text" id="balance"></span>
       </div>
 
 

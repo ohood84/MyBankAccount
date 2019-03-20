@@ -1,5 +1,13 @@
 $(document).ready(function() {
+  var initialDeposit = 0;
+  var depositAmount = 0;
+  var totalBalance=0.0;
+  var newAccount1 ;
+  var name="";
 
+  var withdrawalAmount = 0;
+
+resetFields();
     function BankAccount() {
       this.accounts = [];
     }
@@ -12,58 +20,98 @@ $(document).ready(function() {
     function Account(name, initialDeposit) {
       this.name= name;
       this.initialDeposit = initialDeposit;
-      this.totalBalance=0;
+      this.Adeposit=0.0;
+      this.Awithdraw=0.0;
+      this.totalBalance=0.0;
     }
 
     Account.prototype.addInitial= function(initialDeposit) {
-      return (this.totalBalance += initialDeposit);
+      this.Adeposit=this.initialDeposit;
+
+      return this.totalBalance += initialDeposit;
+      // debugger;
     }
 
     Account.prototype.deposit= function(depositAmount) {
-      return this.totalBalance += depositAmount;
+      return this.Adeposit=this.initialDeposit + depositAmount;
     }
 
     Account.prototype.withdrawal= function(withdrawalAmount) {
-      return this.totalBalance -= withdrawalAmount;
+      return this.totalBalance= this.Adeposit-withdrawalAmount;
+    }
+
+    document.getElementById("initial").onkeyup=function(){
+      name = $("input#name").val();
+      initialDeposit = parseFloat($("input#initial").val());
+      newAccount1 = new Account(name, initialDeposit);
+       // newAccount1.initial=
+       newAccount1.addInitial(initialDeposit);
+      // $("#balance").val(newAccount1.totalBalance);
+      $("#balance").val("$"+(newAccount1.totalBalance).toFixed(2));
+
+    }
+
+  document.getElementById("deposit").onkeyup=function(){
+        depositAmount = parseFloat($("input#deposit").val());
+      newAccount1.totalBalance=newAccount1.deposit(depositAmount);
+      // newAccount1.totalBalance=newAccount1.deposit-newAccount1.withdrawal;
+       // $("#balance").val(newAccount1.totalBalance);
+       $("#balance").val("$"+(newAccount1.totalBalance).toFixed(2));
     }
 
 
 
-    // $("form#bank").submit(function(event){
-    //   event.preventDefault();
-    //
+    document.getElementById("withdrawal").onkeyup=function(){
+        withdrawalAmount = parseFloat($("input#withdrawal").val());
+        newAccount1.totalBalance=newAccount1.withdrawal(withdrawalAmount);
+          // newAccount1.totalBalance=newAccount1.deposit-newAccount1.withdrawal;
+        $("#balance").val("$"+(newAccount1.totalBalance).toFixed(2));
+    }
+
+
+    $("form#bank").submit(function(event){
+      event.preventDefault();
+
 
       var bank = new BankAccount();
 
       var name = $("input#name").val();
-      var initialDeposit = parseInt($("input#initial").val());
+      initialDeposit = 0.0;
+      // parseInt($("input#initial").val());
+      depositAmount =0.0;
+      // parseInt($("input#deposit").val());
+      // alert( depositAmount);
+      withdrawalAmount =0.0;
+       // parseInt($("input#withdrawal").val());
+      // alert( withdrawalAmount);
 
-      var newAccount1 = new Account(name, initialDeposit, totalBalance);
-      newAccount1.addInitial(initialDeposit);
+      // var newAccount1 = new Account(name, initialDeposit);
+      // newAccount1.addInitial(initialDeposit);
 
       bank.addAccount(newAccount1);
-      $("#result").text("total balance is:" + " " + totalBalance);
-
-      if ($("#deposit")){
-        var depositAmount = parseInt($("input#deposit").val());
-        newAccount1.deposit(depositAmount);
-        $("#result").text("total balance is:" + " " + totalBalance);
-      }
-
-      if ($("#withdrawal")){
-        var withdrawalAmount = parseInt($("input#withdrawal").val());
-        newAccount1.withdrawal(withdrawalAmount);
-        $("#result").text("total balance is:" + " " + totalBalance);
-    }
-
-      $("#result").text("hello there!");
+      // $("#result").append("total balance is:" + " " + newAccount1.totalBalance+"<br>");
 
 
-    // });
+
+         // newAccount1.deposit(depositAmount);
+        // $("#result").append("total balance is:" + " " +newAccount1.totalBalance);
+
+
+
+         // newAccount1.withdrawal(withdrawalAmount);
+        // $("#result").append("total balance is:" + " " +newAccount1.totalBalance);
+
+
+       // $("#balance").val(newAccount1.totalBalance);
+
+      resetFields();
+    });
+
 
 
   function resetFields(){
     $("#bank")[0].reset();
+    $("#balance").val("0.00");
   }
 
     // $("form").not($("div form.new-address"));
